@@ -1,0 +1,35 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">UTIMCO Coding Exercise</h1>
+</div>
+
+@* loop through list of menus *@
+@foreach (var menu in Model.MenuCollection)
+{
+    int total = 0;
+
+    <h2>@menu.Menu.Header</h2>
+
+    <ul>
+        @* loop through items in menu *@
+        @foreach (var item in menu.Menu.Items)
+        {
+            //check each item for a label; if so, add to total
+            if (item != null && !String.IsNullOrEmpty(item.Label))
+            {
+                <li>@item.Id</li>
+
+                total += item.Id;
+            }
+        }
+    </ul>
+
+    <h4 style="color: Highlight">Total: @total</h4>
+
+    <hr/>
+}

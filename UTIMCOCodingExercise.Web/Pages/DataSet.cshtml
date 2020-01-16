@@ -1,0 +1,37 @@
+﻿@page
+@model DataSetModel
+@{
+    ViewData["Title"] = "Data Set";
+}
+<h1>@ViewData["Title"]</h1>
+
+
+@* loop through list of menus *@
+@foreach (var menu in Model.MenuCollection)
+{
+    <h3>@menu.Menu.Header</h3>
+
+    <ul>
+        @* loop through menu items *@
+        @foreach (var item in menu.Menu.Items)
+        {
+            //if item has a lable, print id with label
+            if (item != null && !string.IsNullOrEmpty(item.Label))
+            {
+                <li>@String.Format("{0}: {1}", item.Id, item.Label)</li>
+            }
+            //if item doesn't have a lable, make red & indicate no label
+            else if (item != null)
+            {
+                <li style="color: red">@String.Format("{0}: no label", item.Id)</li>
+            }
+            else
+            //if null item, make red & indicate null
+            {
+                <li style="color: red">@String.Format("null item")</li>
+            }
+        }
+    </ul>
+
+    <hr/>
+}
