@@ -4,7 +4,7 @@ This project is a coding exercise which demonstrates coding style & project deli
 
 Given a JSON string which describes a menu, calculate the SUM of the IDs of all "items", as long as a "label" exists for that item.
 
-Input - Your program should somehow take a file (or path to a file) as input. The given sample JSON string can be found [here](samplemenu.json).
+Input - Your program should somehow take a file (or path to a file) as input. The given sample JSON string can be found [here](https://github.com/delunaj/UTIMCOCodingExercise/UTIMCOCodingExercise.Web/wwwroot/data/samplemenu.json).
 
 All IDs are integers between 0 and 100. The menu can be of any length.
 
